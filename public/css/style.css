@@ -46,6 +46,10 @@ body {
   background-color: #ff7581 !important;
   color: #ffffff !important;
 }
+.img-keys {
+  width: 30px;
+  float: left;
+}
 .megaboard {
   margin-top: auto;
   margin-bottom: auto;
@@ -90,6 +94,9 @@ h5 {
 
 .cute-tp {
   align-content: center!important;
+}
+.list-group-item {
+  background-color: rgba(230,78,92,0.5);
 }
 
 .modal {

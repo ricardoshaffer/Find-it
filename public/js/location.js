@@ -76,7 +76,7 @@ function GetMap(){
           iconOptions: {
               image: 'going-potty',
               anchor: 'center',
-              size: 0.5,
+              size: 0.3,
               allowOverlap: true
           }
       }));
@@ -236,7 +236,8 @@ function endSearch() {
        // set camera to bounds to show the results
        map.setCamera({
            bounds: data.bbox,
-           zoom: 10
+           zoom: 10,
+           pitch: 45
        });
       
    });
