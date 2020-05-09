@@ -67,7 +67,7 @@ function GetMap(){
 
        parallelGeocode();
    //Load the custom image icon into the map resources.
-   map.imageSprite.add('going-potty', 'https://cdn.shopify.com/s/files/1/0251/2525/7269/files/tp-hunter-lg.png').then(function () {
+   map.imageSprite.add('going-potty', '/img/monster-locator.svg').then(function () {
       userLocation = new atlas.source.DataSource();
       userLocation.add(new atlas.data.Point([lon, lat]));
       map.sources.add(userLocation);
@@ -224,7 +224,7 @@ function endSearch() {
    var lon = longitudeLoc;
   
    searchURL.searchPOI(atlas.service.Aborter.timeout(10000), query, {
-       limit: 10,
+       limit: 20,
        lat: lat,
        lon: lon,
        radius: radius
