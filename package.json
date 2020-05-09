@@ -11,8 +11,8 @@
     "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ricardo Shaffer",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "2.4.3",
     "dotenv": "^8.2.0",
