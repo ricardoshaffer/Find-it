@@ -48,6 +48,7 @@ body {
 }
 .img-keys {
   width: 30px;
+  padding-right: 1vw;
   float: left;
 }
 .megaboard {

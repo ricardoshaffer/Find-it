@@ -19,7 +19,6 @@ var addressesEmpty = featuresEMPTY;
 //GET INFORMATION FROM SQL DATABASE
 $.get("/api/stores", function(storeDataLogs) {
     storesinfo = storeDataLogs;
-    console.log(storeDataLogs);
     // ITERATE THROUGH COORDINATES AND PASS TO FEATURESTEST ARRAY
     storesinfo.forEach(obj => {
         uniqueTag = obj.id;
@@ -76,7 +75,7 @@ function GetMap(){
           iconOptions: {
               image: 'going-potty',
               anchor: 'center',
-              size: 0.3,
+              size: 0.5,
               allowOverlap: true
           }
       }));
@@ -250,7 +249,6 @@ function endSearch() {
 
        //==== gets data to put into sql
       let storeResponse = e.shapes[0].getProperties();
-      console.log(storeResponse);
 
       // Uses the response data for clicked icon to pull data and plug into sql script below
       for(storeData=0; storeData < 10; storeData++){
@@ -262,7 +260,6 @@ function endSearch() {
           store_distance = storeResponse.dist;
           store_distP = parseInt(store_distance);
           store_Inventory = 3;
-          console.log("address: "+ store_address + ", distance: " + store_distance + " , store ID:" + store_ID + ", store Name: " + store_Name + " ,longitude: " + store_Long)
       }
        //Create HTML from properties of the selected result.
        var html = `
@@ -310,8 +307,7 @@ function endSearch() {
             $("#store-ID-popup").attr("display","inline");
         }else{
             $("#store-ID-popup").attr("display", "none");
-        }
-        console.log(store_distP);
+        };
 
        //Update the content and position of the popup.
        popup.setPopupOptions({

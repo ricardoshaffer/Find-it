@@ -6,7 +6,7 @@ function getLocation() {
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(showPosition);
 } else {
-  x.innerHTML = "Geolocation is not supported by this browser.";
+  innerHTML = "Geolocation is not supported by this browser.";
 }
 }
 
@@ -17,26 +17,6 @@ console.log("Latitude: " + position.coords.latitude + "Longitude: " + position.c
 GetMap();
 }
 
-// function submitTP() {
-//   var radioValue = $("input[name='tp-status']:checked").val();
-//   var storeID = $("#submit-button").data("storeid");
-//   console.log("you chose"+ " " + radioValue);
-//   console.log(storeID);
-//   sendTPStatus(storeID, radioValue);
-// };
-
-// function sendTPStatus(storeID, radioValue) {
-//   $.ajax({
-//     type: "POST",
-//     url: "/api/status",
-//     data: {
-//       storeID: storeID,
-//       radioValue: radioValue
-//     }
-//   });
-// }
-       //====== UPDATE INVENTORY ======//
-              //=== end of custom sql code
 
         
               function sendTPStatus(storeID, radioValue) {
