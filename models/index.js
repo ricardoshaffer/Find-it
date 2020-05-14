@@ -8,7 +8,6 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
-let s3 = process.env.AZU_SECRET;
 
 if (process.env.JAWSDB_URL) {
   console.log(process.env.JAWSDB_URL);
@@ -37,4 +36,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-module.exports = s3;

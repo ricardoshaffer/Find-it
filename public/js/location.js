@@ -4,7 +4,6 @@
 //var apiKEY = keyAPI.txt;
 //console.log(apiKEY);
 //console.log(encrypted);
-var s3 = require('s3');
 var map, addresses, addressesHalf, addressesEmpty, store_distP, datasource, popup, fullTP, store_ID,
 results = [];
 resultsHalf = [];
@@ -48,6 +47,7 @@ $.get("/api/stores", function(storeDataLogs) {
 })
   
 function GetMap(){
+
    //Instantiate a map object
    var map = new atlas.Map("myMap", {
        showFeedbackLink: false,
@@ -56,7 +56,7 @@ function GetMap(){
        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
        authOptions: {
            authType: 'subscriptionKey',
-           subscriptionKey: s3
+           subscriptionKey: process.env.HERO_KEY
        }
    });
    
