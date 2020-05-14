@@ -1,4 +1,9 @@
 
+//var keyAPI = require('crypto-js');
+//var encrypted = CryptoJS.AES.encrypt("txt", "Secret Passphrase").toString();
+//var apiKEY = keyAPI.txt;
+//console.log(apiKEY);
+//console.log(encrypted);
 var map, addresses, addressesHalf, addressesEmpty, store_distP, datasource, popup, fullTP, store_ID,
 results = [];
 resultsHalf = [];
@@ -51,7 +56,7 @@ function GetMap(){
        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
        authOptions: {
            authType: 'subscriptionKey',
-           subscriptionKey: 'UvxFkEk2hDbOs3XJW_aD99p7fHJjj5r91ETRRWsyQgQ'
+           subscriptionKey: `HERO_KEY`
        }
    });
    
@@ -62,11 +67,10 @@ function GetMap(){
    geoURLEMPTY = new atlas.service.SearchURL(pipeline); // FOR EMPTY TP
    //Wait until the map resources are ready.
    map.events.add('ready', function() {
-      
-
-       parallelGeocode();
+    var lat = latitudeLoc;
+    var lon = longitudeLoc;
    //Load the custom image icon into the map resources.
-   map.imageSprite.add('going-potty', '/img/monster-locator.svg').then(function () {
+   map.imageSprite.add('going-potty', 'https://cdn.shopify.com/s/files/1/0251/2525/7269/files/monster-locator-sm.png').then(function () {
       userLocation = new atlas.source.DataSource();
       userLocation.add(new atlas.data.Point([lon, lat]));
       map.sources.add(userLocation);
@@ -75,23 +79,28 @@ function GetMap(){
           iconOptions: {
               image: 'going-potty',
               anchor: 'center',
-              size: 0.5,
-              allowOverlap: true
+              size: 0.3,
+              allowOverlap: false
           }
       }));
+      map.setCamera({
+        center: [lon, lat],
+        zoom: 10,
+        duration: 1000,
+        type: 'fly'  
+    });
   });
 
   //Create a data source and add it to the map.
   datasource = new atlas.source.DataSource();
   map.sources.add(datasource);
-      
-
+       parallelGeocode();
   //Add a layer for rendering point data.
   map.imageSprite.add('question-tp', 'https://cdn.shopify.com/s/files/1/0251/2525/7269/files/question-tp.png');
   var resultLayer = new atlas.layer.SymbolLayer(datasource, null, {
       iconOptions: {
           image: 'question-tp',
-          anchor: 'center',
+          //anchor: 'center',
           size: 0.3,
           allowOverlap: true
       },
@@ -114,7 +123,7 @@ function GetMap(){
     var tpFound = new atlas.layer.SymbolLayer( geoSource,null, {
     iconOptions: {
         image: 'tp-full',
-        anchor: 'center',
+        //anchor: 'center',
         size: 0.4,
         allowOverlap: true
     }
@@ -130,15 +139,17 @@ map.imageSprite.add('tp-half', 'https://cdn.shopify.com/s/files/1/0251/2525/7269
 var tpHalf = new atlas.layer.SymbolLayer( geoHalf,null, {
 iconOptions: {
     image: 'tp-half',
-    anchor: 'center',
+   //anchor: 'center',
     size: 0.4,
     allowOverlap: true
 }
 });
+
     map.layers.add(tpHalf);
     popup = new atlas.Popup();
     //Add a mouse over event to the result layer and display a popup when this event fires.
       map.events.add('click', tpHalf, showPopup);
+      
 // EMPTY INVENTORY
 geoEmpty = new atlas.source.DataSource();
 map.sources.add(geoEmpty);
@@ -146,7 +157,7 @@ map.imageSprite.add('tp-empty', 'https://cdn.shopify.com/s/files/1/0251/2525/726
 var tpEmpty = new atlas.layer.SymbolLayer( geoEmpty,null, {
 iconOptions: {
     image: 'tp-empty',
-    anchor: 'center',
+    //anchor: 'center',
     size: 0.4,
     allowOverlap: true
 }
@@ -157,6 +168,7 @@ iconOptions: {
       map.events.add('click', tpEmpty, showPopup);
 
    });
+
 //=============  END toilet paper inventory IMAGES ==========//
 
 //============= START toilet paper inventory ROUTING ==========//
@@ -217,13 +229,13 @@ function endSearch() {
 
 //============= END full toilet paper inventory ==========//
    // Latitude & Longitude are provided by the 'map.js' script for geolocation function
-   var query =  'grocery-store';
+   var query =  "grocery-store";
    var radius = 9000;
    var lat = latitudeLoc;
    var lon = longitudeLoc;
   
    searchURL.searchPOI(atlas.service.Aborter.timeout(10000), query, {
-       limit: 20,
+       limit: 10,
        lat: lat,
        lon: lon,
        radius: radius
@@ -233,11 +245,11 @@ function endSearch() {
        var data = results.geojson.getFeatures();
        datasource.add(data);
        // set camera to bounds to show the results
-       map.setCamera({
-           bounds: data.bbox,
-           zoom: 10,
-           pitch: 45
-       });
+    //    map.setCamera({
+    //        bounds: data.bbox,
+    //        zoom: 10,
+    //        pitch: 45
+    //    });
       
    });
   

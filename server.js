@@ -6,8 +6,6 @@ var exphbs = require("express-handlebars");
 require('dotenv').config();
 var passport = require("./config/passport");
 
-
-
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 
