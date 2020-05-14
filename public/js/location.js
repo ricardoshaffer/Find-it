@@ -11,7 +11,7 @@ resultsEmpty = [];
 var featuresFULL = [];
 var featuresHALF = [];
 var featuresEMPTY = [];
-var keyAPI = require("../../models/index");
+var keyAPI = apiKEY();
 //var inventoryAmt = [];
 var searchOptions = {
    view: 'Auto',
@@ -57,7 +57,7 @@ function GetMap(){
        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
        authOptions: {
            authType: 'subscriptionKey',
-           subscriptionKey: keyAPI.subscriptionKey
+           subscriptionKey: keyAPI
        }
    });
    
