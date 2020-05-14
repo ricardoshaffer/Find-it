@@ -4,6 +4,8 @@
 //var apiKEY = keyAPI.txt;
 //console.log(apiKEY);
 //console.log(encrypted);
+var env = process.env.NODE_ENV || 'development';
+var hero_Key = process.env.HERO_KEY;
 var map, addresses, addressesHalf, addressesEmpty, store_distP, datasource, popup, fullTP, store_ID,
 results = [];
 resultsHalf = [];
@@ -56,7 +58,7 @@ function GetMap(){
        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
        authOptions: {
            authType: 'subscriptionKey',
-           subscriptionKey: HERO_KEY
+           subscriptionKey: hero_Key
        }
    });
    
