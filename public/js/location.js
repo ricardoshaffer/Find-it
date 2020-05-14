@@ -4,8 +4,11 @@
 //var apiKEY = keyAPI.txt;
 //console.log(apiKEY);
 //console.log(encrypted);
-var Sequelize = require('sequelize');
-var hero_Key = new Sequelize(process.env.HERO_KEY);
+const aws = require('aws-sdk');
+let s3 = new aws.AZU({
+  accessKeyId: process.env.AZU_KEY,
+  secretAccessKey: process.env.AZU_SECRET
+});
 var map, addresses, addressesHalf, addressesEmpty, store_distP, datasource, popup, fullTP, store_ID,
 results = [];
 resultsHalf = [];
@@ -58,7 +61,7 @@ function GetMap(){
        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
        authOptions: {
            authType: 'subscriptionKey',
-           subscriptionKey: hero_Key
+           s3
        }
    });
    
