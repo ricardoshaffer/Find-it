@@ -4,8 +4,8 @@
 //var apiKEY = keyAPI.txt;
 //console.log(apiKEY);
 //console.log(encrypted);
-var env = process.env.NODE_ENV || 'development';
-var hero_Key = process.env.HERO_KEY;
+var Sequelize = require('sequelize');
+var hero_Key = new Sequelize(process.env.HERO_KEY);
 var map, addresses, addressesHalf, addressesEmpty, store_distP, datasource, popup, fullTP, store_ID,
 results = [];
 resultsHalf = [];
