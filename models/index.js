@@ -11,6 +11,7 @@ var db        = {};
 if (process.env.JAWSDB_URL) {
   console.log(process.env.JAWSDB_URL);
   var sequelize = new Sequelize(process.env.JAWSDB_URL);
+  const apiAzzure = new Sequelize(process.env.AZU_SECRET);
 } else {
   var sequelize = new Sequelize(config.database, config.username, process.env.PASS, config);
 }
@@ -33,5 +34,6 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.apiAzzure = apiAzzure;
 
 module.exports = db;
