@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 // Requiring passport as we've configured it
 require('dotenv').config();
 var passport = require("./config/passport");
-const compression = require('compression');
+var compression = require('compression');
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -18,7 +18,7 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(commpression());
+app.use(compression());
 // handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
