@@ -282,7 +282,7 @@ function endSearch() {
    
       var formHTML =
          `
-          <span id="store-ID-popup">
+          <span id="store-ID-popup" class="store-ID-popup">
      <form name="radio-buttons">
      <h2>How much toilet paper is in this location?</h2>  
         <div class="row">
