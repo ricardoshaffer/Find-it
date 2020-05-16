@@ -284,7 +284,7 @@ function endSearch() {
          `
           <span id="store-ID-popup" class="store-ID-popup">
      <form name="radio-buttons">
-     <h2>How much toilet paper is in this location?</h2>  
+     <h2>how much is avail?</h2>  
         <div class="row">
          <input type="radio" name="tp-status" value="0" >
          <img class="col img-fluid" src="img/tp-empty-icon.svg" alt="no toilet paper" data-toggle="tooltip" data-placement="top" title="no toilet paper">
