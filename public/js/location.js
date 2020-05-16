@@ -1,4 +1,3 @@
-var db = require("../models/index");
 //var keyAPI = require('crypto-js');
 //var encrypted = CryptoJS.AES.encrypt("txt", "Secret Passphrase").toString();
 //var apiKEY = keyAPI.txt;
@@ -56,7 +55,7 @@ function GetMap(){
        //Add your Azure Maps subscription key to the map SDK. Get an Azure Maps key at https://azure.com/maps
        authOptions: {
            authType: 'subscriptionKey',
-           subscriptionKey: AZURE
+           subscriptionKey: 'mki8eUZLdAogzR0p8TF8tcIWFbI9eOQEWSwc76zHQG4'
        }
    });
    
