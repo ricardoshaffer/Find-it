@@ -46,6 +46,9 @@ body {
   background-color: #ff7581 !important;
   color: #ffffff !important;
 }
+.img-fluid{
+  width: 50px;
+}
 .img-keys {
   width: 30px;
   padding-right: 1vw;

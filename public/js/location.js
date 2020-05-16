@@ -285,20 +285,19 @@ function endSearch() {
           <span id="store-ID-popup">
      <form name="radio-buttons">
      <h2>How much toilet paper is in this location?</h2>  
-     <div class="row">
-       <label class="row">
+        <div class="row">
          <input type="radio" name="tp-status" value="0" >
          <img class="col img-fluid" src="img/tp-empty-icon.svg" alt="no toilet paper" data-toggle="tooltip" data-placement="top" title="no toilet paper">
-       </label>
-       <label class="row">
+         </div>
+         <div class="row">
          <input type="radio" name="tp-status" value="1">
          <img class="col img-fluid" data-toggle="tooltip" data-placement="top" title="moderate amount of toilet paper" src="img/tp-half-icon.svg" alt="moderate amount of toilet paper">
-       </label>
-       <label class="row">
+         </div>
+         <div class="row">
          <input type="radio" name="tp-status" value="2">
          <img class="col img-fluid" src="img/tp-full-icon.svg" alt="tons of toilet paper" data-toggle="tooltip" data-placement="top" title="plenty of toilet paper!">
-       </label>
-       <!-- Left as default selected radio button incase user doesn't select the options above. So we can identify junk in our db -->
+        </div>
+         <!-- Left as default selected radio button incase user doesn't select the options above. So we can identify junk in our db -->
        <label style="display: none;">
          <input type="radio" name="tp-status" value="3" checked>
        </label>
