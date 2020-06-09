@@ -4,6 +4,7 @@ Enables a shopper to quickly and conveniently use a geolocation tool to find sto
 ## Deployed at
 *   https://damp-everglades-23999.herokuapp.com/map
 *   using CLI: ```npm start```
+*   View online deployment at: https://ancient-temple-83211.herokuapp.com/
 
 ## Architecture
 **_Wireframe_**
