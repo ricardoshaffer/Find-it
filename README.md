@@ -2,7 +2,7 @@
 Enables a shopper to quickly and conveniently use a geolocation tool to find stores nearby.  Additional information from either the shop owners (or users within 1000 meters of the facility) can update the inventory from out of toilet paper, some toilet paper, and plenty of toilet paper.
 
 ## Deployed at
-*   https://damp-everglades-23999.herokuapp.com/map
+*   https://findinventory.herokuapp.com/
 *   using CLI: ```npm start```
 *   View online deployment at: https://ancient-temple-83211.herokuapp.com/
 
